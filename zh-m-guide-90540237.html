@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>milan.com — 从关键词到主题内容 | 延伸阅读</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #f8e3d0 0%, #f5d4b8 35%, #efc4a2 70%, #e8b58c 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(3px);
+      border-radius: 36px 36px 28px 28px;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 18px 40px rgba(110, 60, 30, 0.12), 0 6px 14px rgba(80, 40, 20, 0.08);
+      transition: box-shadow 0.2s ease;
+      border: 1px solid rgba(255, 245, 235, 0.7);
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 560;
+      letter-spacing: -0.02em;
+      color: #3e2c1f;
+      margin-bottom: 0.6rem;
+      background: linear-gradient(135deg, #4b3425, #7a5b3e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .byline {
+      font-size: 1rem;
+      color: #7d6956;
+      border-left: 4px solid #d9b38c;
+      padding-left: 1rem;
+      margin-top: 0.2rem;
+      font-weight: 380;
+    }
+
+    .section {
+      margin: 1.6rem 0 1.2rem 0;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 520;
+      color: #4f3826;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #eedbcb;
+      padding-bottom: 0.15rem;
+      display: inline-block;
+    }
+
+    .section p {
+      color: #3a2c21;
+      margin: 0.5rem 0 0.8rem 0;
+      font-size: 0.98rem;
+    }
+
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.8rem;
+      margin: 0.8rem 0 1rem 0;
+    }
+
+    .highlight-item {
+      flex: 1 1 180px;
+      background: #fcf4ec;
+      padding: 0.7rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      color: #4d3827;
+      box-shadow: inset 0 0 0 1px #edd9c7;
+      font-weight: 420;
+    }
+
+    .highlight-item::before {
+      content: "·";
+      margin-right: 0.4rem;
+      color: #b2825f;
+      font-weight: 700;
+    }
+
+    .usage-box {
+      background: #f5eee7;
+      border-radius: 24px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0;
+      border-left: 6px solid #c99d7a;
+    }
+
+    .usage-box p {
+      margin: 0.2rem 0;
+    }
+
+    .usage-box .label {
+      font-weight: 520;
+      color: #5f4030;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .tip-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .tip-item {
+      background: #fffbf7;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #3e2f23;
+      border: 1px solid #e3cfbe;
+    }
+
+    .faq-mini {
+      margin: 1.5rem 0 0.8rem 0;
+      border-top: 1px dashed #dcc1ae;
+      padding-top: 1.2rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #4f3a29;
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini details p {
+      margin: 0.3rem 0 0.2rem 0.8rem;
+      color: #4d392b;
+    }
+
+    .link-sentence {
+      background: #f7ece3;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px;
+      text-align: center;
+      margin: 1.5rem 0 0.8rem 0;
+      font-size: 0.98rem;
+      color: #3f2f23;
+      border: 1px solid #e8d2c0;
+    }
+
+    .link-sentence a {
+      color: #8b5f3f;
+      text-decoration: none;
+      font-weight: 580;
+      background: #ffffffd0;
+      padding: 0.25rem 1.1rem;
+      border-radius: 40px;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(140, 95, 60, 0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+      border: 1px solid #dbbc9f;
+      margin: 0 0.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .link-sentence a:hover {
+      background: #f2e2d2;
+      box-shadow: 0 4px 10px rgba(130, 80, 45, 0.12);
+      border-color: #b58362;
+    }
+
+    .footnote {
+      font-size: 0.82rem;
+      color: #7d6a5a;
+      margin-top: 1rem;
+      text-align: center;
+      border-top: 1px solid #ebdbcf;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 580px) {
+      .card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .highlights {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .highlight-item {
+        flex: 1 1 auto;
+      }
+      .link-sentence {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="hero">
+      <h1>从关键词到内容脉络</h1>
+      <div class="byline">一个域名的背后，不止一个词</div>
+    </div>
+
+    <div class="section">
+      <h2>摘要</h2>
+      <p>域名往往只是入口，而围绕它所展开的主题内容才是持续阅读的理由。以 <strong>milan.com</strong> 为锚点，这里聚合了与城市文化、设计语言、日常灵感相关的中文材料，不追逐热点，更看重叙述的纵深。</p>
+    </div>
+
+    <div class="section">
+      <h2>内容亮点</h2>
+      <div class="highlights">
+        <div class="highlight-item">非时效性 · 题材偏重人文与空间</div>
+        <div class="highlight-item">短文与随笔为主，单篇可独立理解</div>
+        <div class="highlight-item">适合作延伸浏览或背景阅读</div>
+      </div>
+    </div>
+
+    <div class="usage-box">
+      <span class="label">阅读建议</span>
+      <p>页面内容并不追求每天更新，更适合在需要切换注意力、或者想从碎片信息中短暂脱离时打开。每篇文章长度控制在 3–6 分钟可读完，侧重叙述而非结论。</p>
+      <div class="tip-group">
+        <div class="tip-item">🕊️ 适合早晨或午后，搭配一杯茶或咖啡</div>
+        <div class="tip-item">📖 可以从任意一篇开始，前后没有强依赖</div>
+        <div class="tip-item">🔍 如果对某个话题感兴趣，可以用站内索引进一步探索</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>关于访问</h2>
+      <p>站点保持轻量结构，不设置强制弹窗或自动播放内容。你可以直接通过 <a href="https://zh-m-milan.com">milan.com</a> 进入首页，然后根据标题选择感兴趣的条目。整个浏览过程不需要注册，也无付费门槛。</p>
+    </div>
+
+    <div class="faq-mini">
+      <details>
+        <summary>内容主要涉及哪些方向？</summary>
+        <p>以城市观察、日常物件、设计思维以及非虚构类短评居多。偶尔也会整理一些跨文化话题的笔记，风格偏平实。</p>
+      </details>
+      <details>
+        <summary>更新频率是怎样的？</summary>
+        <p>不定期发布，平均每月 2–4 篇。没有推送提醒，适合主动回访的阅读习惯。</p>
+      </details>
+      <details>
+        <summary>可以转载或引用吗？</summary>
+        <p>允许非商业引用，标明出处即可。具体可参考站点内的版权说明页。</p>
+      </details>
+    </div>
+
+    <div class="link-sentence">
+      如果你在寻找一个内容稳定、不刻意迎合算法的中文站点，不妨试试 <a href="https://zh-m-milan.com">milan.com</a> —— 它没有推送，也不收集个人数据，只提供经过挑选的主题内容。
+    </div>
+
+    <div class="footnote">
+      <span>基于内容本身展开，而非关键词堆砌。· 保持阅读的本来节奏</span>
+    </div>
+  </div>
+</body>
+</html>
